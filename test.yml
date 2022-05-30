@@ -12,3 +12,10 @@
     - name: Display the User name
       ansible.builtin.debug:
         msg: "Hello User {{ username_on_the_host.stdout }} from Jenkins and Ansible!!"
+
+    - name: Add string to AWS Secrets Manager
+  aws_secret:
+    name: 'test_secret_string'
+    state: present
+    secret_type: 'string'
+    secret: "{{ super_secret_string }}"
