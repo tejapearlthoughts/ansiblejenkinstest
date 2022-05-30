@@ -6,7 +6,7 @@
   tasks:
     - name: Get the username running this playbook
       become: false
-      local_action: shell aws secretsmanager get-secret-value --secret-id MySecret| jq --raw-output '.SecretString' | jq -r .username
+      shell: aws secretsmanager get-secret-value --secret-id MySecret| jq --raw-output '.SecretString' | jq -r .username
       register: username_on_the_host
 
     - name: Display the User name
