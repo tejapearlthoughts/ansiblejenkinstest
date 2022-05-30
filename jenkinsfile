@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Execute Playbook'){
             steps {
-                ansiblePlaybook installation: 'ansiblexec', inventory: 'ansible.inv', playbook: 'test.yml', sudoUser: 'ubuntu'
+                ansiblePlaybook installation: 'ansiblexec', playbook: 'test.yml'
             }
         }
     }
