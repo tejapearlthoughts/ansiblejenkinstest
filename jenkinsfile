@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages{
+        stage('Execute Playbook'){
+            steps {
+                ansiblePlaybook becomeUser: 'ubuntu', installation: 'ansiblexec', inventory: 'ansible.inv', playbook: 'test.yml', sudoUser: 'ubuntu'
+            }
+        }
+    }
+}
