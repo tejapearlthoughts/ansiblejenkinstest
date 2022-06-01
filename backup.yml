@@ -13,7 +13,7 @@
      target: "{{ lookup('pipe','date +%d_%m_%Y') }}_pms.sql"
      login_host: pms.ctuqhqzbzpnq.ap-south-1.rds.amazonaws.com
      login_user: pms2
-     login_password: Yh2bbKa4fxcN
+     login_password: {{ password }}
      dump_extra_args: "--set-gtid-purged=OFF"
 
   - name: Simple PUT operation
