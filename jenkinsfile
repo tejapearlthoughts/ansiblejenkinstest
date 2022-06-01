@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Execute Playbook'){
             steps {
-                ansiblePlaybook installation: 'ansiblexec', playbook: 'test.yml'
+                ansiblePlaybook installation: 'ansiblexec', playbook: 'backup.yml'
             }
         }
     }
